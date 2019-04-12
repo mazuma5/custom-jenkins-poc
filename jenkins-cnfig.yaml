@@ -1,0 +1,37 @@
+jenkins:
+  systemMessage: "Auto Config demo: configured automatically with JCasC plugin\n\n"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  maven:
+    installations:
+    - home: "/opt/maven"
+      name: "maven"
+  jdk:
+    installations:
+    - home: "/usr/lib/jvm/java-8-openjdk-amd64"
+      name: "jdk"
+
+  nodejs:
+    installations:
+    - home: "/usr/include/node"
+      name: "node"
+
+jobs:
+  - script: >
+      pipelineJob('pipeline') {
+          definition {
+              cpsScm {
+                  scriptPath 'Jenkinsfile'
+                  scm {
+                    git {
+                        remote { url 'https://github.com/mazuma5/SimpleMavenJunitWebApp.git' }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+              }
+          }
+      }

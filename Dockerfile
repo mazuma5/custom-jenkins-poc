@@ -16,5 +16,5 @@ ENV PATH=${M2_HOME}/bin:${PATH}
 #install jenkins plugins
 WORKDIR /app
 COPY jenkins-plugin.list /app
-COPY jenkins-cnfig.yaml /usr/share/jenkins/ref/jenkins.yaml
 RUN /usr/local/bin/install-plugins.sh < jenkins-plugin.list
+RUN usermod -a -G root jenkins

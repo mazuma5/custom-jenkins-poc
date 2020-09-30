@@ -5,8 +5,7 @@ performance
 delivery-pipeline-plugin
 build-pipeline-plugin
 configuration-as-code
-configuration-as-code-support
 job-dsl
 nexus-jenkins-plugin
-veracode-scanner
+veracode-scan
 sonar

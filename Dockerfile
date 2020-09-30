@@ -1,18 +1,17 @@
 FROM jenkins/jenkins
 USER root
-RUN apt-get update
+RUN apt-get update 
 #install git
 RUN apt-get -y install git
-#install docker
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-RUN apt-key fingerprint 0EBFCD88
-RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-RUN apt-get -y update
-RUN apt-get -y install containerd.io
+#install vim
+RUN apt-get -y install vim
+#install docker cli
+RUN curl -sSL https://get.docker.com/ | sh
 #install Node
 RUN apt-get -y install curl software-properties-common
-RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get -y install nodejs
+#CMD npm link @angular/cli
 #install Maven
 RUN wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -P /tmp
 RUN tar xf /tmp/apache-maven-3.6.3-bin.tar.gz -C /opt
@@ -36,4 +35,5 @@ COPY jenkins-plugin.list /app
 RUN /usr/local/bin/install-plugins.sh < jenkins-plugin.list
 #configure global config
 COPY jenkins.yaml /var/jenkins_home/
+RUN usermod -a -G docker jenkins
 RUN usermod -a -G root jenkins

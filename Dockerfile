@@ -1,6 +1,8 @@
 FROM jenkins/jenkins
 USER root
 RUN apt-get update
+#install git
+RUN apt-get -y install git
 #install docker
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 RUN apt-key fingerprint 0EBFCD88

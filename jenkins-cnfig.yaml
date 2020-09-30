@@ -17,9 +17,3 @@ tool:
     installations:
     - home: "/usr/include/node"
       name: "node"
-      properties:
-      - installSource:
-          installers:
-          - nodeJSInstaller:
-              id: "14.11.0"
-              npmPackagesRefreshHours: 72

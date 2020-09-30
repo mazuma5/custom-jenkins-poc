@@ -1,6 +1,12 @@
 FROM jenkins/jenkins
 USER root
 RUN apt-get update
+#install docker
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN apt-key fingerprint 0EBFCD88
+RUN sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+RUN apt-get update
+RUN apt-get install containerd.io
 #install Node
 RUN apt-get -y install curl software-properties-common
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -

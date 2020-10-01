@@ -31,7 +31,8 @@ RUN apt-get -y update
 RUN apt-get -y install google-chrome-stable
 #install allure
 RUN wget -O allure.zip https://github.com/allure-framework/allure2/releases/download/2.7.0/allure-2.7.0.zip
-RUN unzip allure.zip -d /opt/ && mv /opt/allure-* /opt/allure
+RUN unzip allure.zip -d /opt/  
+RUN ln -s /opt/allure-2.7.0 /opt/allure
 #install jenkins plugins
 WORKDIR /app
 COPY jenkins-plugin.list /app

@@ -11,11 +11,14 @@ RUN curl -sSL https://get.docker.com/ | sh
 RUN apt-get -y install curl software-properties-common
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get -y install nodejs
-#CMD npm link @angular/cli
 #install Maven
 RUN wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -P /tmp
 RUN tar xf /tmp/apache-maven-3.6.3-bin.tar.gz -C /opt
 RUN ln -s /opt/apache-maven-3.6.3 /opt/maven
+#install apache jmeter
+RUN wget -c http://ftp.ps.pl/pub/apache//jmeter/binaries/apache-jmeter-5.2.tgz -P /tmp
+RUN tar -xf /tmp/apache-jmeter-5.2 -C /opt
+RUN ln -s /opt/apache-jmeter-5.2 /opt/jmeter
 #env variables
 ENV JAVA_HOME=/usr/local/openjdk-8/
 ENV M2_HOME=/opt/maven
@@ -35,5 +38,4 @@ COPY jenkins-plugin.list /app
 RUN /usr/local/bin/install-plugins.sh < jenkins-plugin.list
 #configure global config
 COPY jenkins.yaml /var/jenkins_home/
-RUN usermod -a -G docker jenkins
 RUN usermod -a -G root jenkins

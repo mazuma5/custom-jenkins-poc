@@ -9,3 +9,5 @@ job-dsl
 nexus-jenkins-plugin
 veracode-scan
 sonar
+plot
+performance

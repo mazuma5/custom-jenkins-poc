@@ -17,7 +17,7 @@ RUN tar xf /tmp/apache-maven-3.6.3-bin.tar.gz -C /opt
 RUN ln -s /opt/apache-maven-3.6.3 /opt/maven
 #install apache jmeter
 RUN wget -c http://ftp.ps.pl/pub/apache//jmeter/binaries/apache-jmeter-5.2.tgz -P /tmp
-RUN tar -xf /tmp/apache-jmeter-5.2 -C /opt
+RUN tar -xf /tmp/apache-jmeter-5.2.tgz -C /opt
 RUN ln -s /opt/apache-jmeter-5.2 /opt/jmeter
 #env variables
 ENV JAVA_HOME=/usr/local/openjdk-8/

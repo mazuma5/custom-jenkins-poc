@@ -17,3 +17,12 @@ tool:
     installations:
     - home: "/usr/include/node"
       name: "node"
+unclassified:
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: true
+    installations:
+    - name: "sonarqube"
+      serverUrl: "http://40.121.36.214:9000/"
+      triggers:
+        skipScmCause: false
+        skipUpstreamCause: false

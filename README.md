@@ -1,4 +1,4 @@
-# custom-jenkins-poc
+# Custom Jenkins
 # Build Image:
 sudo docker build --tag=custom-jenkins .
 # Run jenkins image:

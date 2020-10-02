@@ -12,3 +12,4 @@ sonar
 plot
 performance
 pipeline-input-step
+docker-workflow

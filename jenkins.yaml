@@ -31,3 +31,10 @@ unclassified:
       triggers:
         skipScmCause: false
         skipUpstreamCause: false
+  globalNexusConfiguration:
+    nxrmConfigs:
+    - nxrm3Configuration:
+        credentialsId: "nexus"
+        displayName: "nexus3"
+        id: "nexus3"
+        serverUrl: "http://40.121.36.214:8081/"

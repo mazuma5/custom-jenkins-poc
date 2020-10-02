@@ -17,6 +17,10 @@ tool:
     installations:
     - home: "/usr/include/node"
       name: "node"
+  sonarRunnerInstallation:
+    installations:
+    - home: "/opt/sonar"
+      name: "sonar"
 unclassified:
   sonarGlobalConfiguration:
     buildWrapperEnabled: true

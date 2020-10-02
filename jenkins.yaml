@@ -25,7 +25,8 @@ unclassified:
   sonarGlobalConfiguration:
     buildWrapperEnabled: true
     installations:
-    - name: "sonarqube"
+    - credentialsId: "sonarqube"
+      name: "sonarqube"
       serverUrl: "http://40.121.36.214:9000/"
       triggers:
         skipScmCause: false

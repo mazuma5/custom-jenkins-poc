@@ -33,6 +33,11 @@ RUN apt-get -y install google-chrome-stable
 RUN wget -O allure.zip https://github.com/allure-framework/allure2/releases/download/2.7.0/allure-2.7.0.zip
 RUN unzip allure.zip -d /opt/  
 RUN ln -s /opt/allure-2.7.0 /opt/allure
+#install sonar scanner
+RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip -P /tmp
+RUN unzip /tmp/sonar-scanner-cli-4.4.0.2170-linux.zip -d /opt/ 
+RUN ln -s /opt/sonar-scanner-4.4.0.2170-linux /opt/sonar
+COPY sonar-scanner.properties /opt/sonar/conf/
 #install jenkins plugins
 WORKDIR /app
 COPY jenkins-plugin.list /app

@@ -27,7 +27,7 @@ unclassified:
     installations:
     - credentialsId: "sonarqube"
       name: "sonarqube"
-      serverUrl: "http://40.121.36.214:9000/"
+      serverUrl: "http://104.46.195.114:9000/"
       triggers:
         skipScmCause: false
         skipUpstreamCause: false
@@ -37,4 +37,4 @@ unclassified:
         credentialsId: "nexus"
         displayName: "nexus3"
         id: "nexus3"
-        serverUrl: "http://40.121.36.214:8081/"
+        serverUrl: "http://104.46.195.114:8081/"
